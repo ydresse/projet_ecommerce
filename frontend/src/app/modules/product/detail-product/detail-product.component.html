@@ -1,0 +1,103 @@
+<div *ngIf="product">
+  <section class="section">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="breadcrumbs">
+        <ul>
+          <li>
+            <a href="/">
+              <span class="icon is-small">
+                <i class="fas fa-home" aria-hidden="true"></i>
+              </span>
+              <span>Accueil</span>
+            </a>
+          </li>
+          <li>
+            <a href="/products">
+              <span class="icon is-small">
+                <i class="fas fa-book" aria-hidden="true"></i>
+              </span>
+              <span>Liste des produits</span>
+            </a>
+          </li>
+          <li>
+            <a >
+              <span class="icon is-small">
+                <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+              </span>
+              <span>{{product.name}}</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="columns is-desktop is-vcentered">
+        <div class="column is-7">
+          <img src="assets/img/pop/{{product.image}}" alt="">
+        </div>
+        <div class="column is-5">
+          <h2 class="title is-spaced">{{product.name}}</h2>
+          <p class="subtitle mb-5">
+            {{product.description}}
+          </p>
+
+          <div class="columns">
+            <div class="column">
+              <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                  <label class="label">{{product.price}}€</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input [(ngModel)]="quantity" min=1 max="{{product.stock}}" class="input" type="number" placeholder="1">
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="control">
+                      <button 
+                        (click)="addToCart(quantity)"
+                        class="button is-primary">
+                          <span class="icon is-left">
+                              <i class="fas fa-shopping-cart"></i>
+                          </span>
+                          <span>Ajouter au panier</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <p>Dépêchez-vous, il ne reste que {{product.stock}} article en stock !</p>
+
+          <hr>
+
+          <h2 class="subtitle">Information sur le produit</h2>
+
+          <div class="table-container">
+            <table class="table is-striped is-fullwidth">
+              <tbody>
+                <tr>
+                  <th>Série</th>
+                  <td>{{product.category}}</td>
+                </tr>
+                <tr>
+                  <th>Personnage</th>
+                  <td>{{product.character}}</td>
+                </tr>
+                <tr>
+                  <th>Référence</th>
+                  <td>{{product.name}}</td>
+                </tr>
+                <!-- <tr>
+                  <th>Date de sortie</th>
+                  <td>{{product.release_date.date}}</td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

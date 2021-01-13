@@ -1,0 +1,63 @@
+Product:
+  type: entity
+  table: product
+  id:
+    idProduct:
+      type: integer
+      nullable: false
+      id: true
+      column: idProduct
+      options:
+        unsinged: false
+      generator:
+        strategy: Auto
+  fields:
+    name:
+      type: string
+      nullable: false
+      length: 256
+      options:
+        fixed: false
+    price:
+      type: string
+      nullable: false
+      length: 256
+      options:
+        fixed: false
+    description:
+      type: string
+      nullable: true
+      length: 256
+      options:
+        fixed: false
+    image:
+      type: string
+      nullable: true
+      length: 256
+      options:
+      fixed: false
+    date_release:
+      type: date
+      nullable: true
+      options:
+        fixed: false
+    stock:
+      type: string
+      nullable: true
+      length: 256
+      options:
+        fixed: false
+    category:
+      type: string
+      nullable: true
+      length: 256
+      options:
+        fixed: false
+    character:
+      type: string
+      nullable: true
+      length: 256
+      options:
+        fixed: false
+
+lifecycleCallbacks: {}

@@ -1,0 +1,114 @@
+<div class="section container">
+  <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+
+    <div class="field is-horizontal">
+      <div class="field-body">
+
+        <div class="field">
+          <label class="label">Civilité</label>
+          <div class="select">
+            <select type="text" placeholder="Civilité du client" formControlName="gender">
+              <option value="Homme">Homme</option>
+              <option value="Femme">Femme</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Prénom</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Prénom du client" formControlName="firstname">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Nom</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Nom du client" formControlName="lastname">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-body">
+
+        <div class="field">
+          <label class="label">Pays</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Pays du client" formControlName="country">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Adresse</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Adresse du client" formControlName="address">
+          </div>
+          <p *ngIf="address.errors && submitted" class="help is-danger">L'adresse est invalide</p>
+        </div>
+
+        <div class="field">
+          <label class="label">Code Postal</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="code Postal du client" formControlName="cp">
+          </div>
+          <p *ngIf="cp.errors && submitted" class="help is-danger">Le code postal est invalide</p>
+        </div>
+
+        <div class="field">
+          <label class="label">Ville</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Ville du client" formControlName="city">
+          </div>
+          <p *ngIf="city.errors && submitted" class="help is-danger">La ville est invalide</p>
+        </div>
+
+      </div>
+    </div>
+
+
+       <div class="field">
+          <label class="label">Téléphone</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Téléphone du client" formControlName="phone">
+          </div>
+          <p *ngIf="phone.errors && submitted" class="help is-danger">Le téléphone est invalide</p>
+        </div>
+
+    <div class="field is-horizontal">
+      <div class="field-body">
+
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Email du client" formControlName="email">
+          </div>
+          <p *ngIf="email.errors && submitted" class="help is-danger">L'adresse mail est invalide</p>
+        </div>
+
+        <div class="field">
+          <label class="label">Login</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="Login du client" formControlName="login">
+          </div>
+          <p *ngIf="login.errors && submitted" class="help is-danger">Le login est invalid</p>
+        </div>
+
+        <div class="field">
+          <label class="label">Password</label>
+          <div class="control">
+            <input class="input" type="password" placeholder="Password du client" formControlName="password">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button type="submit" class="button is-outlined is-link">
+      S'inscrire
+    </button>
+
+  </form>
+</div>

@@ -1,0 +1,72 @@
+<section class="section">
+    <div class="container">
+        <app-search-product (filtreEvent)="onFilterEvent($event)"></app-search-product>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <div *ngIf="(productsFilters | async)?.length==0">
+      <p class="subtitle has-font-weight-bold">
+          Aucun produit ne correspond à vos filtres de recherche.
+      </p>
+    </div>
+
+    <div class="columns is-multiline">
+      <div class="column is-4" *ngFor="let product of productsFilters | async">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title is-centered"> 
+              <span class="mr-5">{{ product.name }} </span>
+              <span class="tag is-info pa-2">#{{product.idProduct}}</span>
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="assets/img/pop/{{product.image}}" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+              <table class="table is-striped is-fullwidth">
+                <tbody>
+                  <tr>
+                    <th>Série</th>
+                    <td>{{product.category}}</td>
+                  </tr>
+                  <tr>
+                    <th>Personnage</th>
+                    <td>{{product.character}}</td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+              <span class="tag is-primary">{{product.price}}€</span>
+            </p>
+            <p class="card-footer-item">
+              <button 
+              (click)="addToCart(product)"
+              class="button is-small is-success">
+                <span class="icon is-left">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span>Ajouter au panier</span>
+            </button>
+            </p>
+            <p class="card-footer-item">
+              <button 
+              class="button is-small is-info"
+              [routerLink]="['/products/product', product.idProduct]">
+                <span class="icon is-left">
+                    <i class="fas fa-eye"></i>
+                </span>
+                <span>Voir</span>
+            </button>
+            </p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

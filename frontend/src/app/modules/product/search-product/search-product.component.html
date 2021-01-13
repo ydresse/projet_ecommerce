@@ -1,0 +1,77 @@
+<form [formGroup]="filterForm" id="filterForm">
+  <div class="container">
+    <div class="column">
+      <div class="field is-horizontal">
+        <div class="field-body">
+
+          <div class="field is-3">
+            <label class="label">Filtrer par nom</label>
+            <p class="control is-expanded has-icons-left">
+              <input class="input is-large" placeholder="Nom du produit" formControlName="nameFilter">
+              <span class="icon is-small is-left">
+                <i class="fas fa-comment"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field is-3">
+            <label class="label">Filtrer par catégorie</label>
+            <div class="control is-expanded has-icons-left">
+              <div class="select is-large">
+                <select formControlName="categoryFilter">
+                  <option>All</option>
+                  <option>Dragon ball</option>
+                  <option>Naruto</option>
+                  <option>One Piece</option>
+                </select>
+              </div>
+              <span class="icon is-small is-left">
+                <i class="fas fa-th"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field is-3">
+            <label class="label">Filtrer par Personnage</label>
+            <div class="control is-expanded has-icons-left">
+              <div class="select is-large">
+                <select formControlName="characterFilter">
+                  <option>All</option>
+                  <option>Goku</option>
+                  <option>Sasuke</option>
+                  <option>Zoro</option>
+                </select>
+              </div>
+              <span class="icon is-small is-left">
+                <i class="fas fa-th"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="field is-3">
+            <label class="label">Filter par prix minimum</label>
+            <p class="control is-expanded has-icons-left has-icons-right">
+              <input class="input is-large" type="number" min=0 placeholder="0€" formControlName="priceMinFilter">
+              <span class="icon is-small is-left">
+                <i class="fas fa-dollar-sign"></i>
+              </span>
+            </p>
+          </div>
+
+          <div class="field is-3">
+            <label class="label">Filter par prix maximum</label>
+            <p class="control is-expanded has-icons-left has-icons-right">
+              <input class="input is-large" type="number" min=0 placeholder="1000€" formControlName="priceMaxFilter">
+              <span class="icon is-small is-left">
+                <i class="fas fa-dollar-sign"></i>
+              </span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</form>
